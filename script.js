@@ -19,7 +19,14 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
+    //prompt user for input
     let choice = prompt("Rock, Paper or Scissor?");
+
+    //fix camelCase
+    choice = choice.toLowerCase();
+    firstLetter = choice.at(0).toUpperCase();
+    choice = firstLetter + choice.slice(1);
+
     return choice;
 }
 console.log(getHumanChoice());
