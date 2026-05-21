@@ -38,37 +38,37 @@ function playGame(){
     function playRound(humanChoice, computerChoice) {
         
         if (humanChoice === computerChoice){
-            console.log("Tie");
+            alert("Tie");
             humanScore = humanScore + 1;
             computerScore = computerScore + 1;
         }
         else if (humanChoice === "Rock"){
             if (computerChoice === "Paper"){
-                console.log(`You lose. ${computerChoice} beats ${humanChoice}`);
+                alert(`You lose. ${computerChoice} beats ${humanChoice}`);
                 computerScore = computerScore + 1;
             }
             else {
-                console.log(`You won! ${humanChoice} beats ${computerChoice}`);
+                alert(`You won! ${humanChoice} beats ${computerChoice}`);
                 humanScore = humanScore + 1;
             }
         }
         else if (humanChoice === "Paper"){
             if (computerChoice === "Scissor"){
-                console.log(`You lose. ${computerChoice} beats ${humanChoice}`)
+                alert(`You lose. ${computerChoice} beats ${humanChoice}`)
                 computerScore = computerScore + 1;
             }
             else {
-                console.log(`You won! ${humanChoice} beats ${computerChoice}`);
+                alert(`You won! ${humanChoice} beats ${computerChoice}`);
                 humanScore = humanScore + 1;
             }
         }
         else {
             if (computerChoice === "Rock"){
-                console.log(`You lose. ${computerChoice} beats ${humanChoice}`)
+                alert(`You lose. ${computerChoice} beats ${humanChoice}`)
                 computerScore = computerScore + 1;
             }
             else {
-                console.log(`You won! ${humanChoice} beats ${computerChoice}`);
+                alert(`You won! ${humanChoice} beats ${computerChoice}`);
                 humanScore = humanScore + 1;
             }
         }
