@@ -85,3 +85,5 @@ function playGame(){
         playRound(humanChoice, computerChoice);
     }
 }
+
+playGame();
