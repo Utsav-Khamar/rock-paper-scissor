@@ -78,12 +78,9 @@ function playGame(){
     for(i=1; i<=round; i++){
         let humanChoice = getHumanChoice();
         let computerChoice = getComputerChoice();
-
-        console.log(humanChoice);
-        console.log(computerChoice);
         
         result = playRound(humanChoice, computerChoice);
-        alert(`${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`);
+        alert(`Round: ${i} \nYou: ${humanChoice}, Computer: ${computerChoice} \n${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`);
     }
 }
 
