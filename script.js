@@ -24,7 +24,15 @@ function getHumanChoice() {
     return choice;
 }
 
-function playRound(humanChoice, computerChoice) {
+
+
+function playGame(){
+
+    //Declare variables for human and computer score
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice){
         console.log("Tie");
         humanScore = humanScore + 1;
@@ -62,11 +70,6 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame(){
-    
-    //Declare variables for human and computer score
-    let humanScore = 0;
-    let computerScore = 0;
 }
 
 
