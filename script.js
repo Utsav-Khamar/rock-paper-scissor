@@ -1,5 +1,3 @@
-console.log("Hello world!");
-
 //Declare variables for human and computer score
 let humanScore = 0;
 let computerScore = 0;
