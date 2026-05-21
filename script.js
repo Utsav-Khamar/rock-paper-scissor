@@ -38,38 +38,38 @@ function playGame(){
     function playRound(humanChoice, computerChoice) {
         
         if (humanChoice === computerChoice){
-            alert("Tie");
             humanScore = humanScore + 1;
             computerScore = computerScore + 1;
+            return("Tie");
         }
         else if (humanChoice === "Rock"){
             if (computerChoice === "Paper"){
-                alert(`You lose. ${computerChoice} beats ${humanChoice}`);
                 computerScore = computerScore + 1;
+                return(`You lose. ${computerChoice} beats ${humanChoice}`);
             }
             else {
-                alert(`You won! ${humanChoice} beats ${computerChoice}`);
                 humanScore = humanScore + 1;
+                return(`You won! ${humanChoice} beats ${computerChoice}`);
             }
         }
         else if (humanChoice === "Paper"){
             if (computerChoice === "Scissor"){
-                alert(`You lose. ${computerChoice} beats ${humanChoice}`)
                 computerScore = computerScore + 1;
+                return(`You lose. ${computerChoice} beats ${humanChoice}`)
             }
             else {
-                alert(`You won! ${humanChoice} beats ${computerChoice}`);
                 humanScore = humanScore + 1;
+                return(`You won! ${humanChoice} beats ${computerChoice}`);
             }
         }
         else {
-            if (computerChoice === "Rock"){
-                alert(`You lose. ${computerChoice} beats ${humanChoice}`)
+            if (computerChoice === "Rock"){         
                 computerScore = computerScore + 1;
+                return(`You lose. ${computerChoice} beats ${humanChoice}`)
             }
             else {
-                alert(`You won! ${humanChoice} beats ${computerChoice}`);
                 humanScore = humanScore + 1;
+                return(`You won! ${humanChoice} beats ${computerChoice}`);
             }
         }
     }
@@ -82,7 +82,8 @@ function playGame(){
         console.log(humanChoice);
         console.log(computerChoice);
         
-        playRound(humanChoice, computerChoice);
+        result = playRound(humanChoice, computerChoice);
+        alert(`${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`);
     }
 }
 
