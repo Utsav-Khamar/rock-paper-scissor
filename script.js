@@ -44,9 +44,9 @@ function playGame(event){
 
 
     let computerChoice = getComputerChoice();
-    
+
     [result, humanScore, computerScore] = playRound(humanChoice, computerChoice, humanScore, computerScore);
-    alert(`Round: ${i} \nYou: ${humanChoice}, Computer: ${computerChoice} \n${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`);
+    alert(`You: ${humanChoice}, Computer: ${computerChoice} \n${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`);
 
 }
 
