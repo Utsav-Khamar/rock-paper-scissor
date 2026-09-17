@@ -26,15 +26,14 @@ function getHumanChoice() {
     return choice;
 }
 
+//Declare variables for human and computer score
+let humanScore = 0;
+let computerScore = 0;
+let result = '';
+
+
 //Game Logic
 function playGame(event){
-
-    //Declare variables for human and computer score
-    let humanScore = 0;
-    let computerScore = 0;
-    let round = 5;
-    let result = '';
-
 
     let humanChoice = event.target.id;
     //Capitalize first letter
