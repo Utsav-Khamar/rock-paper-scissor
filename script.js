@@ -45,7 +45,7 @@ function playGame(event){
     let computerChoice = getComputerChoice();
 
     [result, humanScore, computerScore] = playRound(humanChoice, computerChoice, humanScore, computerScore);
-    alert(`You: ${humanChoice}, Computer: ${computerChoice} \n${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`);
+    resultText.innerText = `You: ${humanChoice}, Computer: ${computerChoice} \n${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`;
 
 }
 
@@ -89,7 +89,9 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
     }
     return [result, humanScore, computerScore];
 }
+let resultText = document.querySelector('div');
 
 let buttons = document.querySelectorAll('button');
 buttons.forEach( (button) => button.addEventListener('click', playGame));
+
 
