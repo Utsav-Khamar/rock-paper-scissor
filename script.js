@@ -27,7 +27,7 @@ function getHumanChoice() {
 }
 
 //Game Logic
-function playGame(){
+function playGame(event){
 
     //Declare variables for human and computer score
     let humanScore = 0;
@@ -35,13 +35,12 @@ function playGame(){
     let round = 5;
     let result = '';
 
-    //Call playRound using iteration
-    for(i=1; i<=round; i++){
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-        [result, humanScore, computerScore] = playRound(humanChoice, computerChoice, humanScore, computerScore);
-        alert(`Round: ${i} \nYou: ${humanChoice}, Computer: ${computerChoice} \n${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`);
-    }
+
+    let humanChoice = event.target.id;
+    let computerChoice = getComputerChoice();
+    [result, humanScore, computerScore] = playRound(humanChoice, computerChoice, humanScore, computerScore);
+    alert(`Round: ${i} \nYou: ${humanChoice}, Computer: ${computerChoice} \n${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`);
+
 }
 
 //Function to play a single round of game
@@ -85,5 +84,6 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
     return [result, humanScore, computerScore];
 }
 
-playGame();
+let buttons = document.querySelectorAll('button');
+buttons.forEach( (button) => button.addEventListener('click', playGame));
 
