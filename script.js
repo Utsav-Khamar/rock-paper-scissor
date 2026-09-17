@@ -33,55 +33,57 @@ function playGame(){
     let humanScore = 0;
     let computerScore = 0;
     let round = 5;
-
-    //Function to play a single round of game
-    function playRound(humanChoice, computerChoice) {
-        
-        if (humanChoice === computerChoice){
-            humanScore = humanScore + 1;
-            computerScore = computerScore + 1;
-            return("Tie");
-        }
-        else if (humanChoice === "Rock"){
-            if (computerChoice === "Paper"){
-                computerScore = computerScore + 1;
-                return(`You lose. ${computerChoice} beats ${humanChoice}`);
-            }
-            else {
-                humanScore = humanScore + 1;
-                return(`You won! ${humanChoice} beats ${computerChoice}`);
-            }
-        }
-        else if (humanChoice === "Paper"){
-            if (computerChoice === "Scissor"){
-                computerScore = computerScore + 1;
-                return(`You lose. ${computerChoice} beats ${humanChoice}`)
-            }
-            else {
-                humanScore = humanScore + 1;
-                return(`You won! ${humanChoice} beats ${computerChoice}`);
-            }
-        }
-        else {
-            if (computerChoice === "Rock"){         
-                computerScore = computerScore + 1;
-                return(`You lose. ${computerChoice} beats ${humanChoice}`)
-            }
-            else {
-                humanScore = humanScore + 1;
-                return(`You won! ${humanChoice} beats ${computerChoice}`);
-            }
-        }
-    }
+    let result = '';
 
     //Call playRound using iteration
     for(i=1; i<=round; i++){
         let humanChoice = getHumanChoice();
         let computerChoice = getComputerChoice();
-        
-        result = playRound(humanChoice, computerChoice);
+        [result, humanScore, computerScore] = playRound(humanChoice, computerChoice, humanScore, computerScore);
         alert(`Round: ${i} \nYou: ${humanChoice}, Computer: ${computerChoice} \n${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`);
     }
 }
 
+//Function to play a single round of game
+function playRound(humanChoice, computerChoice, humanScore, computerScore) {
+    let result = '';
+    if (humanChoice === computerChoice){
+        humanScore = humanScore + 1;
+        computerScore = computerScore + 1;
+        result = "Tie";
+    }
+    else if (humanChoice === "Rock"){
+        if (computerChoice === "Paper"){
+            computerScore = computerScore + 1;
+            result = `You lose. ${computerChoice} beats ${humanChoice}`;
+        }
+        else {
+            humanScore = humanScore + 1;
+            result = `You won! ${humanChoice} beats ${computerChoice}`;
+        }
+    }
+    else if (humanChoice === "Paper"){
+        if (computerChoice === "Scissor"){
+            computerScore = computerScore + 1;
+            result = `You lose. ${computerChoice} beats ${humanChoice}`;
+        }
+        else {
+            humanScore = humanScore + 1;
+            result = `You won! ${humanChoice} beats ${computerChoice}`;
+        }
+    }
+    else {
+        if (computerChoice === "Rock"){         
+            computerScore = computerScore + 1;
+            result = `You lose. ${computerChoice} beats ${humanChoice}`;
+        }
+        else {
+            humanScore = humanScore + 1;
+            result = `You won! ${humanChoice} beats ${computerChoice}`;
+        }
+    }
+    return [result, humanScore, computerScore];
+}
+
 playGame();
+
