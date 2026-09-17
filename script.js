@@ -37,7 +37,14 @@ function playGame(event){
 
 
     let humanChoice = event.target.id;
+    //Capitalize first letter
+    humanChoice = humanChoice.toLowerCase();
+    firstLetter = humanChoice.at(0).toUpperCase();
+    humanChoice = firstLetter + humanChoice.slice(1);
+
+
     let computerChoice = getComputerChoice();
+    
     [result, humanScore, computerScore] = playRound(humanChoice, computerChoice, humanScore, computerScore);
     alert(`Round: ${i} \nYou: ${humanChoice}, Computer: ${computerChoice} \n${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`);
 
