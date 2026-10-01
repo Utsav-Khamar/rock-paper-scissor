@@ -1,11 +1,11 @@
 //Computer Choice
 function getComputerChoice() {
-    // choose a random interger among 0,1 and 2
+    // choose a random integer among 0,1 and 2
     let choice = Math.floor(Math.random() * 3)
-    if (choice === 0){
+    if (choice === 0) {
         return "Rock";
     }
-    else if (choice === 1){
+    else if (choice === 1) {
         return "Paper";
     }
     else {
@@ -33,7 +33,7 @@ let result = '';
 
 
 //Game Logic
-function playGame(event){
+function playGame(event) {
 
     let humanChoice = event.target.id;
     //Capitalize first letter
@@ -52,13 +52,13 @@ function playGame(event){
 //Function to play a single round of game
 function playRound(humanChoice, computerChoice, humanScore, computerScore) {
     let result = '';
-    if (humanChoice === computerChoice){
+    if (humanChoice === computerChoice) {
         humanScore = humanScore + 1;
         computerScore = computerScore + 1;
         result = "Tie";
     }
-    else if (humanChoice === "Rock"){
-        if (computerChoice === "Paper"){
+    else if (humanChoice === "Rock") {
+        if (computerChoice === "Paper") {
             computerScore = computerScore + 1;
             result = `You lose. ${computerChoice} beats ${humanChoice}`;
         }
@@ -67,8 +67,8 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
             result = `You won! ${humanChoice} beats ${computerChoice}`;
         }
     }
-    else if (humanChoice === "Paper"){
-        if (computerChoice === "Scissor"){
+    else if (humanChoice === "Paper") {
+        if (computerChoice === "Scissor") {
             computerScore = computerScore + 1;
             result = `You lose. ${computerChoice} beats ${humanChoice}`;
         }
@@ -78,7 +78,7 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
         }
     }
     else {
-        if (computerChoice === "Rock"){         
+        if (computerChoice === "Rock") {
             computerScore = computerScore + 1;
             result = `You lose. ${computerChoice} beats ${humanChoice}`;
         }
@@ -92,6 +92,6 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
 let resultText = document.querySelector('div');
 
 let buttons = document.querySelectorAll('button');
-buttons.forEach( (button) => button.addEventListener('click', playGame));
+buttons.forEach((button) => button.addEventListener('click', playGame));
 
 
