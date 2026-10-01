@@ -24,12 +24,6 @@ function getHumanChoice(event) {
     return choice;
 }
 
-//Declare variables for human and computer score
-let humanScore = 0;
-let computerScore = 0;
-let result = '';
-
-
 //Game Logic
 function playGame(event) {
 
@@ -81,8 +75,13 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
     }
     return [result, humanScore, computerScore];
 }
-let resultText = document.querySelector('div');
 
+//Declare variables for human and computer score
+let humanScore = 0;
+let computerScore = 0;
+let result = '';
+
+let resultText = document.querySelector('div');
 let buttons = document.querySelectorAll('button');
 buttons.forEach((button) => button.addEventListener('click', playGame));
 
