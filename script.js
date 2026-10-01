@@ -14,11 +14,9 @@ function getComputerChoice() {
 }
 
 //Human Choice
-function getHumanChoice() {
-    //prompt user for input
-    let choice = prompt("Rock, Paper or Scissor?");
-
-    //fix camelCase
+function getHumanChoice(event) {
+    let choice = event.target.id;
+    //Capitalize first letter
     choice = choice.toLowerCase();
     firstLetter = choice.at(0).toUpperCase();
     choice = firstLetter + choice.slice(1);
@@ -35,13 +33,7 @@ let result = '';
 //Game Logic
 function playGame(event) {
 
-    let humanChoice = event.target.id;
-    //Capitalize first letter
-    humanChoice = humanChoice.toLowerCase();
-    firstLetter = humanChoice.at(0).toUpperCase();
-    humanChoice = firstLetter + humanChoice.slice(1);
-
-
+    let humanChoice = getHumanChoice(event);
     let computerChoice = getComputerChoice();
 
     [result, humanScore, computerScore] = playRound(humanChoice, computerChoice, humanScore, computerScore);
