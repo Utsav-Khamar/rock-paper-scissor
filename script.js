@@ -33,6 +33,11 @@ function playGame(event) {
     [result, humanScore, computerScore] = playRound(humanChoice, computerChoice, humanScore, computerScore);
     resultText.innerText = `You: ${humanChoice}, Computer: ${computerChoice} \n${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`;
 
+    if (humanScore === 5 || computerScore === 5) {
+        humanScore = 0;
+        computerScore = 0;
+    }
+
 }
 
 //Function to play a single round of game
