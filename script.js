@@ -16,8 +16,7 @@ function getComputerChoice() {
 //Human Choice
 function getHumanChoice(event) {
     let choice = event.target.id;
-    console.log(event);
-    console.log(choice);
+
     //Capitalize first letter
     choice = choice.toLowerCase();
     firstLetter = choice.at(0).toUpperCase();
@@ -32,6 +31,17 @@ function playGame(event) {
     let humanChoice = getHumanChoice(event);
     let computerChoice = getComputerChoice();
 
+    console.log(humanChoice);
+    console.log(computerChoice);
+    // Replace placeholder in table according to player-computer move
+    let playerMove = document.querySelector('.player-move');
+    let computerMove = document.querySelector('.computer-move');
+
+    playerMove.src = `assets/${humanChoice}.png`;
+    computerMove.src = `assets/${computerChoice}.png`;
+    console.log(computerMove.src);
+    console.log(playerMove.src);
+
     [result, humanScore, computerScore] = playRound(humanChoice, computerChoice, humanScore, computerScore);
     resultText.innerText = `You: ${humanChoice}, Computer: ${computerChoice} \n${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`;
 
@@ -45,8 +55,6 @@ function playGame(event) {
 //Function to play a single round of game
 function playRound(humanChoice, computerChoice, humanScore, computerScore) {
     let result = '';
-    let playerMove = document.querySelector('.player-move');
-    let computerMove = document.querySelector('computer-move');
     if (humanChoice === computerChoice) {
         result = "Tie";
     }
