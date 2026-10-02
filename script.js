@@ -88,7 +88,7 @@ let humanScore = 0;
 let computerScore = 0;
 let result = '';
 
-let resultText = document.querySelector('div');
+let resultText = document.querySelector('.display');
 let buttons = document.querySelectorAll('a');
 buttons.forEach((button) => button.addEventListener('click', playGame));
 

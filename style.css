@@ -1,0 +1,24 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    background-color: floralwhite;
+    padding: 5vh;
+    margin: 0;
+}
+
+.choices {
+    display: flex;
+    background-color: aquamarine;
+    justify-content: center;
+    padding: 0 15%;
+
+}
+
+img {
+    flex: 1;
+    max-width: 100%;
+}
