@@ -9,7 +9,7 @@ function getComputerChoice() {
         return "Paper";
     }
     else {
-        return "Scissor";
+        return "Scissors";
     }
 }
 
@@ -45,9 +45,9 @@ function playGame(event) {
 //Function to play a single round of game
 function playRound(humanChoice, computerChoice, humanScore, computerScore) {
     let result = '';
+    let playerMove = document.querySelector('.player-move');
+    let computerMove = document.querySelector('computer-move');
     if (humanChoice === computerChoice) {
-        humanScore = humanScore + 1;
-        computerScore = computerScore + 1;
         result = "Tie";
     }
     else if (humanChoice === "Rock") {
@@ -61,7 +61,7 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
         }
     }
     else if (humanChoice === "Paper") {
-        if (computerChoice === "Scissor") {
+        if (computerChoice === "Scissors") {
             computerScore = computerScore + 1;
             result = `You lose. ${computerChoice} beats ${humanChoice}`;
         }
@@ -91,5 +91,6 @@ let result = '';
 let resultText = document.querySelector('.display');
 let buttons = document.querySelectorAll('a');
 buttons.forEach((button) => button.addEventListener('click', playGame));
+
 
 
