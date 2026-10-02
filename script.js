@@ -16,6 +16,8 @@ function getComputerChoice() {
 //Human Choice
 function getHumanChoice(event) {
     let choice = event.target.id;
+    console.log(event);
+    console.log(choice);
     //Capitalize first letter
     choice = choice.toLowerCase();
     firstLetter = choice.at(0).toUpperCase();
@@ -26,7 +28,7 @@ function getHumanChoice(event) {
 
 //Game Logic
 function playGame(event) {
-
+    event.preventDefault();
     let humanChoice = getHumanChoice(event);
     let computerChoice = getComputerChoice();
 
@@ -87,7 +89,7 @@ let computerScore = 0;
 let result = '';
 
 let resultText = document.querySelector('div');
-let buttons = document.querySelectorAll('button');
+let buttons = document.querySelectorAll('a');
 buttons.forEach((button) => button.addEventListener('click', playGame));
 
 
