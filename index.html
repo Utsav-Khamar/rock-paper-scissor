@@ -9,28 +9,53 @@
 </head>
 
 <body>
-    <h1>Rock, Paper, Scissors</h1>
-
-    <table>
-        <tr>
-            <th>You</th>
-            <th>vs</th>
-            <th>Computer</th>
-        </tr>
-        <tr>
-            <td><img src="assets/question-mark.png" alt="" class="player-move"></td>
-            <td>-</td>
-            <td><img src="assets/question-mark.png" alt="" class="computer-move"></td>
-        </tr>
-    </table>
-
-    <div class="choices">
-        <a href=""><img src="assets/Rock.png" alt="" id="rock"></a>
-        <a href=""><img src="assets/Paper.png" alt="" id="paper"></a>
-        <a href=""><img src="assets/Scissors.png" alt="" id="scissors"></a>
+    <div class="flex-item">
+        <h1>Rock, Paper, Scissors</h1>
     </div>
 
-    <div class="display"></div>
+    <div class="flex-item">
+        <div class="table">
+            <div class="heading">
+                <span>You</span>
+                <span>vs</span>
+                <span>Computer</span>
+            </div>
+
+            <div class="body">
+                <span>
+                    <img src="assets/question-mark.png" alt="" class="player-move">
+                </span>
+                <span>
+                    -
+                </span>
+                <span>
+                    <img src="assets/question-mark.png" alt="" class="computer-move">
+                </span>
+
+            </div>
+        </div>
+        <!-- <table>
+            <tr>
+                <th>You</th>
+                <th>vs</th>
+                <th>Computer</th>
+            </tr>
+            <tr>
+                <td><img src="assets/question-mark.png" alt="" class="player-move"></td>
+                <td>-</td>
+                <td><img src="assets/question-mark.png" alt="" class="computer-move"></td>
+            </tr>
+        </table> -->
+
+        <div class="choices">
+            <a href=""><img src="assets/Rock.png" alt="" id="rock"></a>
+            <a href=""><img src="assets/Paper.png" alt="" id="paper"></a>
+            <a href=""><img src="assets/Scissors.png" alt="" id="scissors"></a>
+        </div>
+
+        <div class="display"></div>
+    </div>
+
 
     <script src="script.js"></script>
 
