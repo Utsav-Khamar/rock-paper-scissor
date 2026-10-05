@@ -27,25 +27,18 @@ function getHumanChoice(event) {
 
 //Game Logic
 function playGame(event) {
-    if (humanScore === 5 || computerScore === 5) {
-        stopGame();
-        humanScore = 0;
-        computerScore = 0;
-    }
+
     event.preventDefault();
     let humanChoice = getHumanChoice(event);
     let computerChoice = getComputerChoice();
 
-    console.log(humanChoice);
-    console.log(computerChoice);
     // Replace placeholder in table according to player-computer move
     let playerMove = document.querySelector('.player-move');
     let computerMove = document.querySelector('.computer-move');
 
     playerMove.src = `assets/${humanChoice}.png`;
     computerMove.src = `assets/${computerChoice}.png`;
-    console.log(computerMove.src);
-    console.log(playerMove.src);
+
 
     [result, humanScore, computerScore] = playRound(humanChoice, computerChoice, humanScore, computerScore);
 
@@ -54,7 +47,11 @@ function playGame(event) {
     computerScoreText.innerText = computerScore;
     resultDialogue.innerText = `${result}`;
 
-
+    if (humanScore === 5 || computerScore === 5) {
+        stopGame();
+        humanScore = 0;
+        computerScore = 0;
+    }
 
 }
 
@@ -98,9 +95,26 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
 }
 
 function stopGame() {
+    //disable play buttons
+    buttons.forEach((button) => { button.disabled = true })
+
+
     let playAgainbtn = document.createElement('button');
     playAgainbtn.innerText = `Play Again`;
-    display.insertBefore(playAgainbtn, resultDialogue)
+    display.appendChild(playAgainbtn);
+    playAgainbtn.addEventListener('click', () => {
+        humanScore = 0;
+        computerScore = 0;
+        console.log('button ' + playAgainbtn.disabled);
+        playAgainbtn.remove();
+
+        buttons.forEach((button) => { button.disabled = false });
+
+        humanScoreText.innerText = humanScore;
+        computerScoreText.innerText = computerScore;
+        resultDialogue.innerText = 'Click on any icon to start the game.'
+    })
+
 }
 
 //Declare variables for human and computer score
@@ -114,7 +128,7 @@ let humanScoreText = document.querySelector('.human');
 let computerScoreText = document.querySelector('.computer');
 let resultDialogue = document.querySelector('.dialogue');
 
-let buttons = document.querySelectorAll('a');
+let buttons = document.querySelectorAll('.game-btn');
 buttons.forEach((button) => button.addEventListener('click', playGame));
 
 
