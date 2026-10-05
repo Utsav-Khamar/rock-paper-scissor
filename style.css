@@ -35,6 +35,19 @@ h1 {
     align-items: center;
 }
 
+.table-heading {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.table-heading span {
+    flex: 1;
+    text-align: center;
+}
+
 .table .table-body {
     display: flex;
     align-items: center;
@@ -44,6 +57,11 @@ h1 {
 
 .table-body span {
     height: 100%;
+}
+
+.table-body .text {
+    display: flex;
+    align-items: center;
 }
 
 .table-body span img {
@@ -75,11 +93,13 @@ img {
 .main-3 {
     height: 20vh;
     padding: 10px;
+    max-width: 600px;
 }
 
 .score {
     display: flex;
     justify-content: space-around;
+
 }
 
 .dialogue {

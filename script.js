@@ -27,6 +27,11 @@ function getHumanChoice(event) {
 
 //Game Logic
 function playGame(event) {
+    if (humanScore === 5 || computerScore === 5) {
+        stopGame();
+        humanScore = 0;
+        computerScore = 0;
+    }
     event.preventDefault();
     let humanChoice = getHumanChoice(event);
     let computerChoice = getComputerChoice();
@@ -43,12 +48,13 @@ function playGame(event) {
     console.log(playerMove.src);
 
     [result, humanScore, computerScore] = playRound(humanChoice, computerChoice, humanScore, computerScore);
-    resultText.innerText = `You: ${humanChoice}, Computer: ${computerChoice} \n${result} \nYour score: ${humanScore} \nComputer Score: ${computerScore}`;
 
-    if (humanScore === 5 || computerScore === 5) {
-        humanScore = 0;
-        computerScore = 0;
-    }
+
+    humanScoreText.innerText = humanScore;
+    computerScoreText.innerText = computerScore;
+    resultDialogue.innerText = `${result}`;
+
+
 
 }
 
@@ -91,12 +97,23 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
     return [result, humanScore, computerScore];
 }
 
+function stopGame() {
+    let playAgainbtn = document.createElement('button');
+    playAgainbtn.innerText = `Play Again`;
+    display.insertBefore(playAgainbtn, resultDialogue)
+}
+
 //Declare variables for human and computer score
 let humanScore = 0;
 let computerScore = 0;
 let result = '';
 
-let resultText = document.querySelector('.display');
+// let resultText = document.querySelector('.display');
+let display = document.querySelector('.display');
+let humanScoreText = document.querySelector('.human');
+let computerScoreText = document.querySelector('.computer');
+let resultDialogue = document.querySelector('.dialogue');
+
 let buttons = document.querySelectorAll('a');
 buttons.forEach((button) => button.addEventListener('click', playGame));
 
