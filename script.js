@@ -28,35 +28,31 @@ function getHumanChoice(event) {
 //Game Logic
 function playGame(event) {
 
-    event.preventDefault();
     let humanChoice = getHumanChoice(event);
     let computerChoice = getComputerChoice();
 
     // Replace placeholder in table according to player-computer move
-
-
     playerMove.src = `assets/${humanChoice}.png`;
     computerMove.src = `assets/${computerChoice}.png`;
 
-
     [result, humanScore, computerScore] = playRound(humanChoice, computerChoice, humanScore, computerScore);
 
-
+    // Replace placeholder values with game result and scores
     humanScoreText.innerText = humanScore;
     computerScoreText.innerText = computerScore;
     resultDialogue.innerText = `${result}`;
 
+    // Stop the game is any of the player wins 5 times
     if (humanScore === 5 || computerScore === 5) {
         stopGame();
-        humanScore = 0;
-        computerScore = 0;
     }
-
 }
 
 //Function to play a single round of game
 function playRound(humanChoice, computerChoice, humanScore, computerScore) {
+    // Initialize result
     let result = '';
+
     if (humanChoice === computerChoice) {
         result = "Tie";
     }
@@ -94,21 +90,29 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
 }
 
 function stopGame() {
+
     //disable play buttons
-    buttons.forEach((button) => { button.disabled = true; })
+    buttons.forEach((button) => {
+        button.disabled = true;
+        button.style.opacity = 0.5;
+    })
 
-
+    // Create Restart button and add it to DOM
     let playAgainBtn = document.createElement('button');
     playAgainBtn.classList.add('play-again')
     playAgainBtn.innerText = `Play Again`;
     display.appendChild(playAgainBtn);
+
+    // Reset the page on clicking Restart button
     playAgainBtn.addEventListener('click', () => {
         humanScore = 0;
         computerScore = 0;
-        console.log('button ' + playAgainBtn.disabled);
         playAgainBtn.remove();
 
-        buttons.forEach((button) => { button.disabled = false; });
+        buttons.forEach((button) => {
+            button.disabled = false;
+            button.style.opacity = 1;
+        });
 
         humanScoreText.innerText = humanScore;
         computerScoreText.innerText = computerScore;
@@ -117,24 +121,27 @@ function stopGame() {
         playerMove.src = `assets/question-mark.png`;
         computerMove.src = `assets/question-mark.png`;
     })
-
 }
 
-//Declare variables for human and computer score
+// Declare variables for human and computer score
 let humanScore = 0;
 let computerScore = 0;
 let result = '';
 
-// let resultText = document.querySelector('.display');
+// Select table-display elements to show player moves
+let playerMove = document.querySelector('.player-move');
+let computerMove = document.querySelector('.computer-move');
+
+// Select score-display elements to show score and restart button
 let display = document.querySelector('.display');
 let humanScoreText = document.querySelector('.human');
 let computerScoreText = document.querySelector('.computer');
 let resultDialogue = document.querySelector('.dialogue');
 
-let playerMove = document.querySelector('.player-move');
-let computerMove = document.querySelector('.computer-move');
-
+// Select a list of choice buttons
 let buttons = document.querySelectorAll('.game-btn');
+
+// Start the game on clicking any of the 3 choice buttons
 buttons.forEach((button) => button.addEventListener('click', playGame));
 
 
