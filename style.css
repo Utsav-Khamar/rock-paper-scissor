@@ -60,8 +60,11 @@ h1 {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    gap: 30%;
     color: #A14646;
+}
+
+.score {
+    gap: 33%;
 }
 
 .table-heading span {
