@@ -1,3 +1,4 @@
+/* COMMON STYLES FOR ENTIRE PAGE */
 body {
     padding: 0;
     margin: 0;
@@ -14,6 +15,7 @@ body {
     color: #5C7057;
 }
 
+/* HEADING SECTION */
 .heading {
     height: 10vh;
 }
@@ -26,7 +28,7 @@ h1 {
     /* Vertical centering */
     background-color: floralwhite;
     background-color: #A14646;
-    color: antiquewhite;
+    color: #FFF9D6;
     margin: 0;
     height: 100%;
 
@@ -36,13 +38,13 @@ h1 {
     font-size: 150%;
 }
 
+/* GAME-MOVES DISPLAY SECTION*/
 .main-1 {
     height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 
 .table {
     display: flex;
@@ -58,7 +60,8 @@ h1 {
     width: 100%;
     display: flex;
     justify-content: space-around;
-
+    gap: 30%;
+    color: #A14646;
 }
 
 .table-heading span {
@@ -69,7 +72,6 @@ h1 {
 .table .table-body {
     display: flex;
     align-items: center;
-    /* margin: 0px 25%; */
     height: 80%;
 }
 
@@ -87,6 +89,7 @@ h1 {
     object-fit: cover;
 }
 
+/* GAME-PLAY BUTTONS SECTION*/
 .main-2 {
     height: 15vh;
     display: flex;
@@ -98,18 +101,7 @@ h1 {
     max-width: 600px;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
 }
-
-/* .choices a {
-    text-align: center;
-    height: 100%;
-    flex: 1;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 
 .game-btn {
     background-color: #FFF9D6;
@@ -121,6 +113,7 @@ img {
     max-height: 100%;
 }
 
+/* RESULT, RESTART BUTTON DISPLAY SECTION*/
 .main-3 {
     height: 15vh;
     padding: 3vh;
@@ -137,16 +130,11 @@ img {
     align-items: center;
 }
 
-.score {
-    display: flex;
-    justify-content: space-around;
-    gap: 30%;
-}
-
 .dialogue {
     text-align: center;
 }
 
+/* THIS IS ONLY VISIBLE WHEN GAME IS OVER */
 .play-again {
     border: none;
     background-color: tomato;
@@ -159,6 +147,7 @@ img {
     font-size: 3vh;
 }
 
+/* FOOTER SECTION */
 .footer {
     width: 100%;
     background-color: #5C7057;
