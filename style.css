@@ -4,7 +4,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     background-color: #FFF9D6;
 
     font-family: "Concert One", sans-serif;
@@ -98,7 +98,7 @@ h1 {
     max-width: 600px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 /* .choices a {
@@ -157,4 +157,23 @@ img {
     font-weight: 400;
     font-style: normal;
     font-size: 3vh;
+}
+
+.footer {
+    width: 100%;
+    background-color: #5C7057;
+    color: white;
+    text-align: center;
+}
+
+.footer p {
+    margin: 1vh;
+    padding: 0px;
+    font-family: monospace;
+    font-size: 2vh;
+}
+
+.footer a {
+    text-decoration: none;
+    color: black;
 }
