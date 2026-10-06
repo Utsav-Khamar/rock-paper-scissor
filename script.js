@@ -99,14 +99,15 @@ function stopGame() {
     buttons.forEach((button) => { button.disabled = true })
 
 
-    let playAgainbtn = document.createElement('button');
-    playAgainbtn.innerText = `Play Again`;
-    display.appendChild(playAgainbtn);
-    playAgainbtn.addEventListener('click', () => {
+    let playAgainBtn = document.createElement('button');
+    playAgainBtn.classList.add('play-again')
+    playAgainBtn.innerText = `Play Again`;
+    display.appendChild(playAgainBtn);
+    playAgainBtn.addEventListener('click', () => {
         humanScore = 0;
         computerScore = 0;
-        console.log('button ' + playAgainbtn.disabled);
-        playAgainbtn.remove();
+        console.log('button ' + playAgainBtn.disabled);
+        playAgainBtn.remove();
 
         buttons.forEach((button) => { button.disabled = false });
 

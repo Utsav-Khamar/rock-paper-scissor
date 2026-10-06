@@ -1,14 +1,17 @@
 body {
     padding: 0;
     margin: 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    /* justify-content: space-between; */
     background-color: #FFF9D6;
 
     font-family: "Concert One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 2em;
+    font-size: 3vh;
+    color: #5C7057;
 }
 
 .heading {
@@ -22,13 +25,15 @@ h1 {
     align-items: center;
     /* Vertical centering */
     background-color: floralwhite;
+    background-color: #A14646;
+    color: antiquewhite;
     margin: 0;
     height: 100%;
 
     font-family: "Concert One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 7vh;
+    font-size: 150%;
 }
 
 .main-1 {
@@ -96,7 +101,7 @@ h1 {
     align-items: center;
 }
 
-.choices a {
+/* .choices a {
     text-align: center;
     height: 100%;
     flex: 1;
@@ -104,6 +109,11 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+} */
+
+.game-btn {
+    background-color: #FFF9D6;
+    border: none;
 }
 
 img {
@@ -113,7 +123,7 @@ img {
 
 .main-3 {
     height: 15vh;
-    padding: 10px;
+    padding: 3vh;
     display: flex;
     justify-content: center;
 }
@@ -123,7 +133,8 @@ img {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 2vh;
+    align-items: center;
 }
 
 .score {
@@ -134,4 +145,16 @@ img {
 
 .dialogue {
     text-align: center;
+}
+
+.play-again {
+    border: none;
+    background-color: tomato;
+    color: antiquewhite;
+    padding: 1vh;
+
+    font-family: "Concert One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3vh;
 }
