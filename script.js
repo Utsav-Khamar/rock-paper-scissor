@@ -33,8 +33,7 @@ function playGame(event) {
     let computerChoice = getComputerChoice();
 
     // Replace placeholder in table according to player-computer move
-    let playerMove = document.querySelector('.player-move');
-    let computerMove = document.querySelector('.computer-move');
+
 
     playerMove.src = `assets/${humanChoice}.png`;
     computerMove.src = `assets/${computerChoice}.png`;
@@ -96,7 +95,7 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
 
 function stopGame() {
     //disable play buttons
-    buttons.forEach((button) => { button.disabled = true })
+    buttons.forEach((button) => { button.disabled = true; })
 
 
     let playAgainBtn = document.createElement('button');
@@ -109,11 +108,14 @@ function stopGame() {
         console.log('button ' + playAgainBtn.disabled);
         playAgainBtn.remove();
 
-        buttons.forEach((button) => { button.disabled = false });
+        buttons.forEach((button) => { button.disabled = false; });
 
         humanScoreText.innerText = humanScore;
         computerScoreText.innerText = computerScore;
         resultDialogue.innerText = 'Click on any icon to start the game.'
+
+        playerMove.src = `assets/question-mark.png`;
+        computerMove.src = `assets/question-mark.png`;
     })
 
 }
@@ -128,6 +130,9 @@ let display = document.querySelector('.display');
 let humanScoreText = document.querySelector('.human');
 let computerScoreText = document.querySelector('.computer');
 let resultDialogue = document.querySelector('.dialogue');
+
+let playerMove = document.querySelector('.player-move');
+let computerMove = document.querySelector('.computer-move');
 
 let buttons = document.querySelectorAll('.game-btn');
 buttons.forEach((button) => button.addEventListener('click', playGame));
