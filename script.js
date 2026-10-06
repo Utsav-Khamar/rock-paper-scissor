@@ -54,7 +54,7 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
     let result = '';
 
     if (humanChoice === computerChoice) {
-        result = "Tie";
+        result = `It's a Tie. You both chose ${humanChoice}`;
     }
     else if (humanChoice === "Rock") {
         if (computerChoice === "Paper") {
@@ -97,6 +97,17 @@ function stopGame() {
         button.style.opacity = 0.5;
     })
 
+    // Display a message  for who won the game
+    let message = document.createElement('p');
+    if (humanScore === 5) {
+        message.innerText = `Congratulations, You won the game!`;
+    }
+    else {
+        message.innerText = `Oops! You've lost the game this time.`
+    }
+    message.classList.add('message');
+    display.appendChild(message);
+
     // Create Restart button and add it to DOM
     let playAgainBtn = document.createElement('button');
     playAgainBtn.classList.add('play-again')
@@ -108,6 +119,7 @@ function stopGame() {
         humanScore = 0;
         computerScore = 0;
         playAgainBtn.remove();
+        message.remove();
 
         buttons.forEach((button) => {
             button.disabled = false;

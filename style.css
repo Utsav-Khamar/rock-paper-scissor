@@ -119,22 +119,32 @@ img {
 /* RESULT, RESTART BUTTON DISPLAY SECTION*/
 .main-3 {
     height: 15vh;
-    padding: 3vh;
+    /* padding: 3vh; */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
 }
 
 .display {
     max-width: 600px;
     width: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2vh;
     align-items: center;
 }
 
 .dialogue {
     text-align: center;
+    flex: 1;
+}
+
+.message {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    color: tomato;
 }
 
 /* THIS IS ONLY VISIBLE WHEN GAME IS OVER */
@@ -148,6 +158,8 @@ img {
     font-weight: 400;
     font-style: normal;
     font-size: 3vh;
+
+    flex: 1;
 }
 
 /* FOOTER SECTION */
