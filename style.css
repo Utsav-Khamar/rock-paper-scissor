@@ -2,7 +2,7 @@
 body {
     padding: 0;
     margin: 0;
-    height: 100vh;
+    height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,13 +11,13 @@ body {
     font-family: "Concert One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 3vh;
+    font-size: 3svh;
     color: #5C7057;
 }
 
 /* HEADING SECTION */
 .heading {
-    height: 10vh;
+    height: 10svh;
 }
 
 h1 {
@@ -40,7 +40,7 @@ h1 {
 
 /* GAME-MOVES DISPLAY SECTION*/
 .main-1 {
-    height: 50vh;
+    height: 50svh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,7 +94,7 @@ h1 {
 
 /* GAME-PLAY BUTTONS SECTION*/
 .main-2 {
-    height: 15vh;
+    height: 15svh;
     display: flex;
     justify-content: center;
 }
@@ -118,7 +118,7 @@ img {
 
 /* RESULT, RESTART BUTTON DISPLAY SECTION*/
 .main-3 {
-    height: 15vh;
+    height: 15svh;
     /* padding: 3vh; */
     display: flex;
     flex-direction: column;
@@ -152,12 +152,12 @@ img {
     border: none;
     background-color: tomato;
     color: antiquewhite;
-    padding: 1vh;
+    padding: 1svh;
 
     font-family: "Concert One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 3vh;
+    font-size: 3svh;
 
     flex: 1;
 }
@@ -171,10 +171,10 @@ img {
 }
 
 .footer p {
-    margin: 1vh;
+    margin: 1svh;
     padding: 0px;
     font-family: monospace;
-    font-size: 2vh;
+    font-size: 2svh;
 }
 
 .footer a {
