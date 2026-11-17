@@ -19,7 +19,7 @@ function getHumanChoice(event) {
 
     //Capitalize first letter
     choice = choice.toLowerCase();
-    firstLetter = choice.at(0).toUpperCase();
+    let firstLetter = choice.at(0).toUpperCase();
     choice = firstLetter + choice.slice(1);
 
     return choice;
